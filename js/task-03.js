@@ -19,9 +19,8 @@ const list = document.querySelector('.gallery')
 const elements = images.map(({url, alt}) => `<li class="gallery-item"><img src="${url}" alt="${alt}" width="250"></li>`).join('');
 
 list.insertAdjacentHTML("beforeend", elements)
-const galleryItem = document.querySelector('.gallery-item')
 list.setAttribute("style", "display:flex; gap: 10px; list-style: none;")
-galleryItem.setAttribute("style","border: dashed red; hight: 100%;")
+
  
 
 

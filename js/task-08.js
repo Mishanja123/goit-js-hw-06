@@ -6,10 +6,16 @@ function onFormSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const mail = event.currentTarget.elements.email.value
-    const password = event.currentTarget.elements.password.value
-    const data = {
-        mail, password
+    if (event.currentTarget.elements.email.value != "" && event.currentTarget.elements.password.value != "") {
+        const mail = event.currentTarget.elements.email.value
+        const password = event.currentTarget.elements.password.value
+
+        const data = {
+            mail, password
+        }
+        event.currentTarget.reset()
+        console.log(data);
+    } else {
+        alert('Всі поля повинні бути заповнені.')
     }
-    console.log(data);
 }

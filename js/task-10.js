@@ -3,12 +3,12 @@ const destroyBtn = document.querySelector('button[data-destroy]')
 const boxes = document.querySelector('#boxes')
 
 
-createBtn.addEventListener('click',getAmount)
-destroyBtn.addEventListener('click',destroyBoxes)
+createBtn.addEventListener('click',onCreateBtnClick)
+destroyBtn.addEventListener('click',onDestroyBtnClick)
 
 
 
-function getAmount() {
+function onCreateBtnClick() {
   let amount = +document.querySelector("input").value;
   createBoxes(amount)
 }
@@ -22,16 +22,17 @@ function createBoxes(amount) {
     div.setAttribute("style", `width: ${size}; height: ${size};`)
     div.style.backgroundColor = getRandomHexColor()
     fragment.appendChild(div);
-    function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+    getRandomHexColor()
   }
   boxes.appendChild(fragment);
 }
 
-function destroyBoxes() {
+function onDestroyBtnClick() {
   boxes.innerHTML = " "
+}
+function getRandomHexColor() {
+return `#${Math.floor(Math.random() * 16777215)
+.toString(16)
+.padStart(6, 0)}`;
 }
 
