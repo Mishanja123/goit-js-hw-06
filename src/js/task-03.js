@@ -16,19 +16,12 @@ const images = [
 
 const list = document.querySelector('.gallery')
 
-const elements = images.map((images) => {
-  const listEl = document.createElement('li')
-  const imgEl = document.createElement('img')
-  imgEl.src = images.url
-  imgEl.alt = images.alt
+const elements = images.map(({url, alt}) => `<li class = "gallery-item"><img src = ${url} alt = ${alt} width = 250></li>`).join('');
 
-  
-
-return listEl
-});
-
-listEl.insertAdjacentHTML("beforeend", imgEl)
-  console.log(listEl);
+list.insertAdjacentHTML("beforeend", elements)
+const galleryItem = document.querySelector('.gallery-item')
+list.setAttribute("style", "display:flex; gap: 10px; list-style: none;")
+galleryItem.setAttribute("style","border: dashed red; hight: 100%;")
  
-list.append(...elements)
+
 
