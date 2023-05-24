@@ -9,7 +9,7 @@ destroyBtn.addEventListener('click',onDestroyBtnClick)
 
 
 function onCreateBtnClick() {
-  let amount = +document.querySelector("input").value;
+  let amount = Number(document.querySelector("input").value);
   createBoxes(amount)
 }
 
